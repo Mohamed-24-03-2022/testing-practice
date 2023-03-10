@@ -13,4 +13,11 @@ test('array analyzer', () => {
     max: 10,
     length: 7,
   });
+  expect(analyzeArray(['bbbb', 'aaaa', 3, 6, 'cccc', 9, 'dddd'])).toStrictEqual({
+    average: 4.5,
+    min: 3,
+    max: 9,
+    length: 3,
+  });
+  expect(() => analyzeArray({ test: 'test' })).toThrow('not a valid array');
 });
